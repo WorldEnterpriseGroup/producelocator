@@ -15,7 +15,7 @@ function formStylization() {
 	$('input[type="radio"]').wrap('<div class="new-radio"></div>');
 	$('.new-radio').append('<span></span>');
 	$('input[type="checkbox"]').wrap('<div class="new-checkbox"></div>');
-	$('.new-checkbox').append('<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"><polygon fill="#41A3E1" points="9.298,13.391 4.18,9.237 3,10.079 9.297,17 17.999,4.678 16.324,3 "/></svg>');
+	$('.new-checkbox').append('<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"><polygon fill="#ec8230" points="9.298,13.391 4.18,9.237 3,10.079 9.297,17 17.999,4.678 16.324,3 "/></svg>');
 	$('input[type="checkbox"]:checked').parent('.new-checkbox').addClass('checked');
 	$('input[type="radio"]:checked').parent('.new-radio').addClass('checked');
 	$('input[type="radio"]:disabled, input[type="checkbox"]:disabled').parent().addClass('disabled');
