@@ -4669,6 +4669,7 @@ body.dark .contact-us #contactform {
   background-color: white;
   border: solid 2px black;
   border-top: 0;
+  color: #006dcc;
 }
 .searchform:focus-within input + #location-btn {
   display: block;
