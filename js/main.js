@@ -1,6 +1,5 @@
 @@ -1,12 +1,12 @@
 jQuery(window).load(function($) {
-jQuery(window).load(function ($) {
 	var $ = jQuery;
 	
   $('img').each(function() {
