@@ -139,11 +139,11 @@
 						123-45-678
 					</div>
 					<div class="active search">
-						<form method="get" class="searchform">
+						<form class="searchform" onsubmit="event.preventDefault();">
 							<div>
-								<input type="text" value="" name="s" class="s" autocomplete="off"
+								<input id="search-bar" type="text" value="" name="s" class="s" autocomplete="off"
 									placeholder="Search for Produce">
-								<input type="submit" class="searchsubmit btn" value="Go">
+								<input id="search-btn" type="submit" class="searchsubmit btn" value="Go">
 								<button type="button" onclick="getPosition()" id="location-btn" class="hide"><i
 										class="fa fa-location-arrow" aria-hidden="true"></i> Use Current
 									Location</button>
@@ -180,7 +180,7 @@
 					<!--
 	Markers
 -->
-					<div class="hidden properties-on-map">
+					<!-- <div class="hidden properties-on-map">
 						<div class="property-on-map" id="property-marker-488">
 							<input type="hidden" name="property_type" value="apa">
 							<input type="hidden" name="property_location"
@@ -1261,19 +1261,19 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!--
 	Markers
 -->
 
-					<div class="overlay-filter"></div>
+					<!-- <div class="overlay-filter"></div>
 
 					<div class="home-filter filter-position-center open">
 						<a href="#" class="filter-button">
 							Hide <div class="flip"><span>&#8211;</span></div>
 						</a>
-						<div class="clearfix"></div>
-
+						<div class="clearfix"></div> -->
+					<!-- 
 						<div class="filter-content">
 							<div class="move">
 								<span></span>
@@ -1460,191 +1460,194 @@
 							<div class="box right">
 								<a href="properties.html" class="btn btn-block find-all-properties">Find Produce</a>
 							</div>
-						</div><!-- .filter-content -->
-					</div><!-- .home-filter -->
-				</div><!-- .home-map -->
+						</div>.filter-content -->
+				</div><!-- .home-filter -->
+			</div><!-- .home-map -->
 
-			</div><!-- .home-content -->
+		</div><!-- .home-content -->
 
-			<div class="home-tabs">
-				<ul>
-					<li class="active">
-						<a href="#">
-							<div class="setsquare">
-								<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px"
-									height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10"
-									xml:space="preserve">
-									<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111"
-										d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z" />
-								</svg>
-							</div>
-							<span>Map & filter</span>
-							<span class="number">1</span>
-						</a>
-					</li>
-
-					<li>
-						<a href="home-property.html">
-							<div class="setsquare">
-								<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px"
-									height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10"
-									xml:space="preserve">
-									<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111"
-										d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z" />
-								</svg>
-							</div>
-							<span>Best Property</span>
-							<span class="number">2</span>
-						</a>
-					</li>
-
-					<li>
-						<a href="home-agents.html">
-							<div class="setsquare">
-								<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px"
-									height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10"
-									xml:space="preserve">
-									<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111"
-										d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z" />
-								</svg>
-							</div>
-							<span>Best Agents</span>
-							<span class="number">3</span>
-						</a>
-					</li>
-
-					<li>
-						<a href="home-properties.html">
-							<div class="setsquare">
-								<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px"
-									height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10"
-									xml:space="preserve">
-									<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111"
-										d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z" />
-								</svg>
-							</div>
-							<span>Recent Properties</span>
-							<span class="number">4</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="no-background">
-				<div id="primary" class="container">
-					<div class="row">
-						<div id="content" class="span12" role="main">
-							<article class="page">
-								<div class="entry-content">
-
-								</div><!-- .entry-content -->
-							</article><!-- #post -->
+		<div class="home-tabs">
+			<ul>
+				<li class="active">
+					<a href="#">
+						<div class="setsquare">
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px"
+								height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10"
+								xml:space="preserve">
+								<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111"
+									d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z" />
+							</svg>
 						</div>
-					</div>
-				</div><!-- #primary -->
-			</div>
-		</div><!-- #main -->
+						<span>Map & filter</span>
+						<span class="number">1</span>
+					</a>
+				</li>
 
-		<footer id="site-footer" class="bg-light" role="contentinfo">
-			<div class="top-box">
-				<div class="container">
-					<div class="row">
-						<div class="span2 footer-navigation">
-							<h3 class="title">Welcome</h3>
-							<nav role="navigation">
-								<div class="menu-welcome-container">
-									<ul id="menu-welcome" class="menu">
-										<li><a href="blog.html">Add your business</a></li>
-										<li><a href="contact-us.html">Edit your business</a></li>
-										<li><a href="plan.html">Start a vending business</a></li>
-										<li><a href="faq.html">Partner with us</a></li>
-									</ul>
-								</div>
-							</nav>
-						</div><!-- .footer-navigation -->
+				<li>
+					<a href="home-property.html">
+						<div class="setsquare">
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px"
+								height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10"
+								xml:space="preserve">
+								<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111"
+									d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z" />
+							</svg>
+						</div>
+						<span>Best Property</span>
+						<span class="number">2</span>
+					</a>
+				</li>
 
-						<div class="span4 about-us">
-							<a href="about-us.html" class="about-us-link no-border">
-								<h3 class="title">About Us</h3>
-								<div class="text">Our focus is to ensure New Yorkers have access to all fresh local
-									produce at the cheapest price.
-									We are on a mission to end food related illnesses and food deserts by bringing you
-									more affordable and accessible healthy options.
-								</div>
-							</a>
-						</div><!-- .about-us -->
+				<li>
+					<a href="home-agents.html">
+						<div class="setsquare">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px"
+								height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10"
+								xml:space="preserve">
+								<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111"
+									d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z" />
+							</svg>
+						</div>
+						<span>Best Agents</span>
+						<span class="number">3</span>
+					</a>
+				</li>
 
-						<div class="span3 contact-us">
-							<h3 class="title">Contact Us</h3>
-							<ul>
-								<li>Email: <a href="mailto:info@producelocator.com">info@producelocator.com</a></li>
-							</ul>
-						</div><!-- .contact-us -->
+				<li>
+					<a href="home-properties.html">
+						<div class="setsquare">
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px"
+								height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10"
+								xml:space="preserve">
+								<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111"
+									d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z" />
+							</svg>
+						</div>
+						<span>Recent Properties</span>
+						<span class="number">4</span>
+					</a>
+				</li>
+			</ul>
+		</div>
 
-						<div class="span3 sidebar">
-							<aside class="ibr-subscribe-widget widget">
-								<h3 class="widget-title">Newsletter</h3>
-								<p>Stay notified of amazing promotions, delicious recipes, and more.</p>
-								<div class="ibr-subscribe-form">
-									<input class="input-block-level" name="mail" type="email"
-										placeholder="Enter your email adress..." />
-									<input class="btn submit" type="button" value="Go" />
-									<div class="enquire-status"></div>
-								</div>
-							</aside>
-							<div class="aside-border"></div>
-						</div><!-- .sidebar -->
+		<div class="no-background">
+			<div id="primary" class="container">
+				<div class="row">
+					<div id="content" class="span12" role="main">
+						<article class="page">
+							<div class="entry-content">
+
+							</div><!-- .entry-content -->
+						</article><!-- #post -->
 					</div>
 				</div>
-			</div><!-- .top-box -->
+			</div><!-- #primary -->
+		</div>
+	</div><!-- #main -->
 
-			<div class="bottom-box">
-				<div class="container">
-					<div class="row">
-						<div class="span6 pull-right">
-							<ul class="social-icon">
-								<li class="no-border">
-									<a href="https://www.facebook.com/ItemBridge" target="_self">
-										<i class="icon-facebook"></i>
-									</a>
-								</li>
-								<li class="no-border">
-									<a href="https://twitter.com/ItemBridge" target="_self">
-										<i class="icon-twitter"></i>
-									</a>
-								</li>
-								<li class="no-border">
-									<a href="https://plus.google.com/109912245583663219097/posts" target="_self">
-										<i class="icon-gplus"></i>
-									</a>
-								</li>
-								<li class="no-border">
-									<a href="http://www.flickr.com/photos/itembridge" target="_self">
-										<i class="icon-flickr"></i>
-									</a>
-								</li>
-								<li class="no-border">
-									<a href="support@itembridge.com" target="_self">
-										<i class="icon-email"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="span6">Copyright © Produce Locator Inc., 2020</div>
-					</div>
+	<footer id="site-footer" class="bg-light" role="contentinfo">
+		<div class="top-box">
+			<div class="container">
+				<div class="row">
+					<div class="span2 footer-navigation">
+						<h3 class="title">Welcome</h3>
+						<nav role="navigation">
+							<div class="menu-welcome-container">
+								<ul id="menu-welcome" class="menu">
+									<li><a href="blog.html">Add your business</a></li>
+									<li><a href="contact-us.html">Edit your business</a></li>
+									<li><a href="plan.html">Start a vending business</a></li>
+									<li><a href="faq.html">Partner with us</a></li>
+								</ul>
+							</div>
+						</nav>
+					</div><!-- .footer-navigation -->
+
+					<div class="span4 about-us">
+						<a href="about-us.html" class="about-us-link no-border">
+							<h3 class="title">About Us</h3>
+							<div class="text">Our focus is to ensure New Yorkers have access to all fresh local
+								produce at the cheapest price.
+								We are on a mission to end food related illnesses and food deserts by bringing you
+								more affordable and accessible healthy options.
+							</div>
+						</a>
+					</div><!-- .about-us -->
+
+					<div class="span3 contact-us">
+						<h3 class="title">Contact Us</h3>
+						<ul>
+							<li>Email: <a href="mailto:info@producelocator.com">info@producelocator.com</a></li>
+						</ul>
+					</div><!-- .contact-us -->
+
+					<div class="span3 sidebar">
+						<aside class="ibr-subscribe-widget widget">
+							<h3 class="widget-title">Newsletter</h3>
+							<p>Stay notified of amazing promotions, delicious recipes, and more.</p>
+							<div class="ibr-subscribe-form">
+								<input class="input-block-level" name="mail" type="email"
+									placeholder="Enter your email adress..." />
+								<input class="btn submit" type="button" value="Go" />
+								<div class="enquire-status"></div>
+							</div>
+						</aside>
+						<div class="aside-border"></div>
+					</div><!-- .sidebar -->
 				</div>
-				<a href="#" id="up">Up</a>
-			</div><!-- .bottom-box -->
-		</footer><!-- #colophon -->
+			</div>
+		</div><!-- .top-box -->
+
+		<div class="bottom-box">
+			<div class="container">
+				<div class="row">
+					<div class="span6 pull-right">
+						<ul class="social-icon">
+							<li class="no-border">
+								<a href="https://www.facebook.com/ItemBridge" target="_self">
+									<i class="icon-facebook"></i>
+								</a>
+							</li>
+							<li class="no-border">
+								<a href="https://twitter.com/ItemBridge" target="_self">
+									<i class="icon-twitter"></i>
+								</a>
+							</li>
+							<li class="no-border">
+								<a href="https://plus.google.com/109912245583663219097/posts" target="_self">
+									<i class="icon-gplus"></i>
+								</a>
+							</li>
+							<li class="no-border">
+								<a href="http://www.flickr.com/photos/itembridge" target="_self">
+									<i class="icon-flickr"></i>
+								</a>
+							</li>
+							<li class="no-border">
+								<a href="support@itembridge.com" target="_self">
+									<i class="icon-email"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="span6">Copyright © Produce Locator Inc., 2020</div>
+				</div>
+			</div>
+			<a href="#" id="up">Up</a>
+		</div><!-- .bottom-box -->
+	</footer><!-- #colophon -->
 	</div><!-- #page -->
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&#038;sensor=true&#038;ver=3.6.1'></script>
+	<!-- <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&#038;ver=3.6.1'></script> -->
+	<!-- Note, for the map to work, a valid API key with enabled Maps JavaScript API and Geocoding API must be used-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_GOES_HERE&callback=initMap&libraries=&v=weekly"
+		defer></script>
 	<script src='js/jquery-ui-1.10.3.custom.min.js'></script>
 	<script src='js/homepage-map.js'></script>
 	<script src='js/markerclusterer.js'></script>
