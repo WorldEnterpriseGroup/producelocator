@@ -130,13 +130,11 @@
 						<a href="mailto:example@itembridge.com">example@itembridge.com</a>
 @@ -128,14 +141,18 @@
 					<div class="active search">
-						<form method="get" class="searchform">
+						<form class="searchform" onsubmit="event.preventDefault();">
 							<div>
-								<input type="text" value="" name="s" class="s" placeholder="Search for Produce">
-								<input type="submit" class="searchsubmit btn" value="Go" >
-								<input type="text" value="" name="s" class="s" autocomplete="off"
+
 									placeholder="Search for Produce">
-								<input type="submit" class="searchsubmit btn" value="Go">
+								<input id="search-btn" type="submit" class="searchsubmit btn" value="Go">
 								<button type="button" onclick="getPosition()" id="location-btn" class="hide"><i
 										class="fa fa-location-arrow" aria-hidden="true"></i> Use Current
 									Location</button>
@@ -173,7 +171,7 @@
 					<!--
 	Markers
 -->
-					<div class="hidden properties-on-map">
+					<!-- <div class="hidden properties-on-map">
 						<div class="property-on-map" id="property-marker-488">
 							<input type="hidden" name="property_type" value="apa">
 							<input type="hidden" name="property_location" value='{"lat":33.9403173,"lng":-118.1463506,"zoom":11}'>
@@ -1536,21 +1534,17 @@
 								</div>
 							</div>
 						</div>
-					</div>
-<!--
+
 					<!--
 	Markers
 -->
 
-					<div class="overlay-filter"></div>
-					
+
 
 					<div class="home-filter filter-position-center open">
 						<a href="#" class="filter-button">
 							Hide <div class="flip"><span>&#8211;</span></div>
 						</a>
-						<div class="clearfix"></div>
-				  
 
 						<div class="filter-content">
 							<div class="move">
@@ -1856,160 +1850,9 @@
 							<div class="box right">
 								<a href="properties.html" class="btn btn-block find-all-properties">Find Produce</a>
 							</div>
-						</div><!-- .filter-content -->
-					</div><!-- .home-filter -->
-				</div><!-- .home-map -->
-				
-
-			</div><!-- .home-content -->
-
-			<div class="home-tabs">
-				<ul>
-					<li class="active">
-						<a href="#">
-							<div class="setsquare">
-								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px" height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10" xml:space="preserve">
-									<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111" d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z"/>
-							   </svg>
-								<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px"
-									height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10"
-									xml:space="preserve">
-									<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111"
-										d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z" />
-								</svg>
 							</div>
-							<span>Map & filter</span>
-							<span class="number">1</span>
 						</a>
-					</li>
-					
 
-					<li>
-						<a href="home-property.html">
-							<div class="setsquare">
-								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px" height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10" xml:space="preserve">
-									<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111" d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z"/>
-							   </svg>
-								<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px"
-									height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10"
-									xml:space="preserve">
-									<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111"
-										d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z" />
-								</svg>
-							</div>
-							<span>Best Property</span>
-							<span class="number">2</span>
-						</a>
-					</li>
-					
-
-					<li>
-						<a href="home-agents.html">
-							<div class="setsquare">
-								<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px" height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10" xml:space="preserve">
-									<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111" d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z"/>
-							   </svg>
-								<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px"
-									height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10"
-									xml:space="preserve">
-									<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111"
-										d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z" />
-								</svg>
-							</div>
-							<span>Best Agents</span>
-							<span class="number">3</span>
-						</a>
-					</li>
-					
-
-					<li>
-						<a href="home-properties.html">
-							<div class="setsquare">
-								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px" height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10" xml:space="preserve">
-									<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111" d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z"/>
-							   </svg>
-								<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.566px"
-									height="10px" viewBox="0 0 40.566 10" enable-background="new 0 0 40.566 10"
-									xml:space="preserve">
-									<path fill-rule="evenodd" clip-rule="evenodd" fill="#111111"
-										d="M28.284,8c-3.806-2.188-8-8-8-8c0,0-4.214,5.957-8.062,8.062C8.742,9.965,0,10,0,10h40.566C40.566,10,31.703,9.965,28.284,8z" />
-								</svg>
-							</div>
-							<span>Recent Properties</span>
-							<span class="number">4</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-  
-
-			<div class="no-background">
-				<div id="primary" class="container">
-					<div class="row">
-						<div id="content" class="span12" role="main">						  
-						<div id="content" class="span12" role="main">
-							<article class="page">
-							  <div class="entry-content">
-								
-							  </div><!-- .entry-content -->
-								<div class="entry-content">
-
-								</div><!-- .entry-content -->
-							</article><!-- #post -->
-						</div>
-					</div>
-@@ -1485,14 +1566,17 @@ <h3 class="title">Welcome</h3>
-								</div>
-							</nav>
-						</div><!-- .footer-navigation -->
-									
-
-						<div class="span4 about-us">
-							<a href="about-us.html" class="about-us-link no-border">
-								<h3 class="title">About Us</h3>
-								<div class="text">Flat Room Real Estate Agency provides home sellers and buyers with an innovative real estate solution. All our agents have years of experience in the areas they serve, allowing you to save thousands, without compromising on service.</div>
-								<div class="text">Flat Room Real Estate Agency provides home sellers and buyers with an
-									innovative real estate solution. All our agents have years of experience in the
-									areas they serve, allowing you to save thousands, without compromising on service.
-								</div>
-							</a>
-						</div><!-- .about-us -->
-						  
-
-						<div class="span3 contact-us">
-							<h3 class="title">Contact Us</h3>
-							<ul>
-@@ -1501,13 +1585,14 @@ <h3 class="title">Contact Us</h3>
-								<li>Email: <a href="mailto:example@itembridge.com">example@itembridge.com</a></li>
-							</ul>
-						</div><!-- .contact-us -->
-						  
-
-						<div class="span3 sidebar">
-							<aside class="ibr-subscribe-widget widget">
-								<h3 class="widget-title">Newsletter</h3>
-								<p>Sign up for our newsletter to be always up to date.</p>
-								<div class="ibr-subscribe-form">
-									<input class="input-block-level" name="mail" type="email" placeholder="Enter your email adress..."/>
-									<input class="input-block-level" name="mail" type="email"
-										placeholder="Enter your email adress..." />
-									<input class="btn submit" type="button" value="Go" />
-									<div class="enquire-status"></div>
-								</div>
-@@ -1517,7 +1602,7 @@ <h3 class="widget-title">Newsletter</h3>
-					</div>
-				</div>
-			</div><!-- .top-box -->
-	  
-
-			<div class="bottom-box">
-				<div class="container">
-					<div class="row">
-@@ -1577,20 +1662,21 @@ <h3 class="widget-title">Newsletter</h3>
 	<script src='js/jqplot/jqplot.dateAxisRenderer.min.js'></script>
 	<script src='js/jqplot/jqplot.highlighter.min.js'></script>
 	<script src='js/jqplot/jqplot.canvasTextRenderer.min.js'></script>
